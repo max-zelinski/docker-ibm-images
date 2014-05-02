@@ -27,6 +27,6 @@ RUN sed -i -e "s/@@SetupadmUser@@/ihs/g" /opt/IBM/HTTPServer/conf/admin.conf
 RUN sed -i -e "s/@@SetupadmGroup@@/ihs/g" /opt/IBM/HTTPServer/conf/admin.conf
 
 WORKDIR /opt/IBM/HTTPServer
-CMD bin/adminctl start && tail -F logs/access.log
+CMD bin/adminctl start && touch logs/access_log && tail -F logs/access_log
 
 EXPOSE 80 8008
